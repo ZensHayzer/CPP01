@@ -1,44 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 15:19:15 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/06/01 13:20:37 by ajeanne          ###   ########.fr       */
+/*   Created: 2023/06/01 13:20:51 by ajeanne           #+#    #+#             */
+/*   Updated: 2023/06/01 14:15:01 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef __ZOMBIE_H__
-#define __ZOMBIE_H__
+#ifndef __WEAPON_H__
+#define __WEAPON_H__
 
 #include <iostream>
-#include <sstream>
-#include <limits>
 
-class	Zombie	{
+class Weapon	{
+	
 	public:
-		
-		Zombie();
-		Zombie(Zombie &zomb);
-		Zombie(std::string name);
-		~Zombie();
+	
+		Weapon(void);
+		Weapon(std::string type);
+		~Weapon(void);
 
-		void	announce(void) const;
+		const std::string	&getType(void) const;
 
-		std::string	getName(void) const;
-		
-		void	setName(std::string name);
-									
+		void				setType(std::string type);
+	
 	private:
 	
-		std::string	_name;	
+		std::string	_type;
 };
 
-void randomChump(std::string name);
-Zombie* newZombie(std::string name);
-Zombie* zombieHorde(int N, std::string name);
 
 #endif

@@ -1,44 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajeanne <ajeanne@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 15:19:15 by ajeanne           #+#    #+#             */
-/*   Updated: 2023/06/01 13:20:37 by ajeanne          ###   ########.fr       */
+/*   Created: 2023/06/01 13:24:18 by ajeanne           #+#    #+#             */
+/*   Updated: 2023/06/01 14:49:42 by ajeanne          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef __ZOMBIE_H__
-#define __ZOMBIE_H__
+#ifndef __HUMANA_H__
+#define __HUMANA_H__
 
 #include <iostream>
-#include <sstream>
-#include <limits>
+#include "Weapon.hpp"
 
-class	Zombie	{
+class HumanA	{
+
 	public:
-		
-		Zombie();
-		Zombie(Zombie &zomb);
-		Zombie(std::string name);
-		~Zombie();
-
-		void	announce(void) const;
-
-		std::string	getName(void) const;
-		
-		void	setName(std::string name);
-									
-	private:
 	
-		std::string	_name;	
-};
+		HumanA(std::string name, Weapon &weapon);
+		~HumanA(void);
 
-void randomChump(std::string name);
-Zombie* newZombie(std::string name);
-Zombie* zombieHorde(int N, std::string name);
+		void	attack(void) const;
+	
+	private:
+
+		std::string	_name;
+		Weapon		&_weapon;
+};
 
 #endif
